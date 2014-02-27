@@ -13,7 +13,7 @@ module wheel_hub(sw=145, ar=70, rd=6, cd=70, ah=50)
 	}
 }
 
-module wheel_tyre(sw=145, ar=70, rd=6, cd=70)
+module wheel_tyre(sw=145, ar=70, rd=6, cd=70, ah=50)
 {
 	rd_mm=rd*25.4;
 	tr = (rd_mm/2)+(sw*(70/100));
@@ -24,12 +24,12 @@ module wheel_tyre(sw=145, ar=70, rd=6, cd=70)
 	}
 }
 
-module wheel(sw=145, ar=70, rd=6, cd=70)
+module wheel(sw=145, ar=70, rd=6, cd=70, ah=50)
 {
 	translate([0,0,145/2])
 	{
-		color("silver") wheel_hub(sw, ar, rd, cd);
-		color([0.3,0.3,0.3]) wheel_tyre(sw, ar, rd, cd);
+		color("silver") wheel_hub(sw, ar, rd, cd, ah);
+		color([0.3,0.3,0.3]) wheel_tyre(sw, ar, rd, cd, ah);
 	}
 }
 
